@@ -52,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        gameObject.transform.position = originalPos;
+            Debug.Log("You died! :(");
+            gameObject.transform.position = originalPos;
     }
 }
