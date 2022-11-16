@@ -8,14 +8,17 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 8f;
     private float jumpPower = 10f;
     private bool isFacingRight = true;
-
+    private Vector3 originalPos;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    void Start() {
+        originalPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+        //alternatively, just: originalPos = gameObject.transform.position;
+    }
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         horizontal = Input.GetAxisRaw("Horizontal");
         if(Input.GetButtonDown("Jump") && isGrounded()) {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
@@ -46,5 +49,9 @@ public class PlayerMovement : MonoBehaviour
             localScale.x *= -1f;
             transform.localScale = localScale;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        gameObject.transform.position = originalPos;
     }
 }
