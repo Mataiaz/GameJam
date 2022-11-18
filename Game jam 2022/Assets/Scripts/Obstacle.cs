@@ -1,0 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Obstacle : MonoBehaviour
+{
+    private float leftEdge;
+    private void Start() {
+        leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x -3f;
+    }
+    // Update is called once per frame
+    void Update() {
+        transform.position += Vector3.left * GameManager.Instance.gameSpeed * Time.deltaTime;
+
+        if(transform.position.x < leftEdge) {
+            Destroy(gameObject);
+        }
+    }
+}
