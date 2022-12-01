@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialGameSpeed: 5
-  gameSpeedIncrease: 0.1
+  gameSpeedIncrease: 0
   gameOverText: {fileID: 1308913692}
   scoreText: {fileID: 832968318}
   highscoreText: {fileID: 880292852}
@@ -1143,8 +1143,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objects:
-  - prefab: {fileID: 7787235761825126009, guid: af6e4372f7619ab4f8c6dc80bcb22b4b, type: 3}
+  - prefab: {fileID: 1453819722196063059, guid: 064d7fbdda601be4b97819ec40fa63f4, type: 3}
+    spawnChance: 0.3
+  - prefab: {fileID: 7465433059563722589, guid: 14e4647e4de2ce94c8cd6ba0833a6dd7, type: 3}
     spawnChance: 0.2
+  - prefab: {fileID: 5913304277467198530, guid: b8285acceea47894c8420a7ed0bfa53b, type: 3}
+    spawnChance: 0.1
   minSpawnRate: 1
   maxSpawnRate: 2
 --- !u!4 &1249488017
